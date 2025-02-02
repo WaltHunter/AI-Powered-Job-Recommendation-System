@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Display</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+        <li>Hello, {{ user.username }}</li>
+        {% else %}
+        <li>Welcome, Guest</li>
+        {% endif %}
+      </ul>
+    </nav>
+  </body>
+</html>
